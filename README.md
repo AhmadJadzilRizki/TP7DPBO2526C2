@@ -49,8 +49,8 @@ TP7DPBO2526C_LabLoan/
 │   ├── equipment.php      # halaman CRUD alat
 │   └── loan.php           # halaman CRUD peminjaman
 ├── style/
-│   └── style.css
-└── docs/                  # dokumentasi (screen record / screenshot)
+    └── style.css
+
 ```
 
 | Folder / File | Fungsi |
