@@ -1,0 +1,103 @@
+/* Gaya halaman LabLoan: bersih, mirip lembar catatan laboratorium */
+:root {
+    --paper: #eef2f4;
+    --card: #ffffff;
+    --ink: #16232d;
+    --muted: #5d6d78;
+    --line: #d3dde3;
+    --accent: #0e6a78;
+    --accent-dark: #0a515c;
+    --danger: #b0392b;
+    --warn: #a86a00;
+    --ok: #1f7a4d;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+.mono { font-family: Consolas, "Courier New", monospace; font-size: 0.92em; }
+.muted { color: var(--muted); }
+
+/* Navigasi atas */
+.topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px; background: var(--ink); color: #fff;
+    flex-wrap: wrap;
+}
+.brand { font-weight: 700; letter-spacing: .5px; padding: 14px 0; }
+.topbar nav a {
+    display: inline-block; padding: 16px 14px; color: #c5d3db; text-decoration: none;
+    border-bottom: 3px solid transparent;
+}
+.topbar nav a:hover { color: #fff; }
+.topbar nav a.active { color: #fff; border-bottom-color: #4cc3d3; }
+
+.container { max-width: 1050px; margin: 24px auto; padding: 0 16px; }
+h1 { margin: 0 0 6px; font-size: 1.7rem; }
+h2 { margin: 0 0 14px; font-size: 1.1rem; }
+.lead { color: var(--muted); margin-top: 0; }
+
+/* Kartu */
+.card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 18px 20px; margin-bottom: 20px;
+}
+
+/* Form */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+label { display: flex; flex-direction: column; font-size: .88rem; color: var(--muted); gap: 4px; }
+input, select {
+    padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px;
+    font: inherit; color: var(--ink); background: #fff;
+}
+input:focus, select:focus { outline: 2px solid #4cc3d3; border-color: transparent; }
+.form-actions { grid-column: 1 / -1; display: flex; gap: 8px; }
+
+/* Tombol */
+.btn {
+    display: inline-block; padding: 8px 16px; border: 1px solid var(--line);
+    border-radius: 6px; background: #fff; color: var(--ink); cursor: pointer;
+    font: inherit; text-decoration: none;
+}
+.btn:hover { background: #f3f7f9; }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-danger { color: var(--danger); border-color: #e3b9b3; }
+.btn-danger:hover { background: #fbeceb; }
+.btn-small { padding: 4px 10px; font-size: .85rem; }
+
+/* Tabel */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: middle; }
+th { font-size: .82rem; color: var(--muted); font-weight: 600; background: #f6f9fa; }
+td.empty { text-align: center; color: var(--muted); padding: 22px; }
+td.actions { display: flex; gap: 6px; flex-wrap: wrap; }
+td.actions form { margin: 0; }
+
+/* Badge status & kondisi */
+.badge { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: .78rem; background: #e6edf0; }
+.status-dipinjam, .cond-rusak-ringan { background: #fdf0d3; color: var(--warn); }
+.status-dikembalikan, .cond-baik { background: #dcf1e5; color: var(--ok); }
+.status-terlambat, .cond-rusak-berat { background: #f9dedb; color: var(--danger); }
+
+/* Flash message */
+.alert { padding: 11px 16px; border-radius: 6px; margin-bottom: 18px; border: 1px solid; }
+.alert-success { background: #e3f4ea; border-color: #b6dfc6; color: #17603c; }
+.alert-error { background: #fbe7e4; border-color: #efc2bc; color: #8c2d21; }
+
+/* Dashboard */
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 18px; }
+.stat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+    padding: 20px; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+}
+.stat:hover { border-color: var(--accent); }
+.stat-num { font-size: 2.4rem; font-weight: 700; color: var(--accent); line-height: 1.1; }
+.stat-label { color: var(--muted); }
+
+.footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 18px; }
